@@ -61,3 +61,15 @@ You can always use these for your study purposes.
 |	toString		|	Returns the array as a string|
 |	valueOf		|	Like the method toString, this returns the array as a string|
 
+
+### Chapter 3: Stacks
+
+> A stack is an ordered collection of items that follows the LIFO (short for Last In First Out) principle. The addition of new items or the removal of existing items takes place at the same end.
+
+> The end of the stack is known as the top and the opposite is known as the base. The newest elements are near the top, and the oldest elements are near the base.
+
+![alt-stacks](images/js-data-structures-and-algo/stack.png)
+
+#### **Uses**
+
+A stack is generally used by compilers in programming languages and by computer memory to store variables and method calls.
