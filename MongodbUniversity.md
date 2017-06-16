@@ -151,7 +151,7 @@ Thses operators update the document based on the inputs provided with the functi
 
 |	Operator	| 		Description		|
 |---------------|-----------------------|
-|`$`	Acts as a placeholder to update the first element that matches the query condition in an update.|
+|`$`	|Acts as a placeholder to update the first element that matches the query condition in an update.|
 |`$addToSet`|	Adds elements to an array only if they do not already exist in the set.|
 |`$pop`|	Removes the first or last item of an array.|
 |`$pullAll`|	Removes all matching values from an array.|
@@ -172,7 +172,7 @@ Thses operators update the document based on the inputs provided with the functi
 
 |	Operator	| 		Description		|
 |---------------|-----------------------|
-}`$bit`|	Performs bitwise AND, OR, and XOR updates of integer values.|
+|`$bit`|	Performs bitwise AND, OR, and XOR updates of integer values.|
 
 #### Isolation Operator
 
