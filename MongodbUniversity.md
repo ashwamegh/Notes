@@ -75,7 +75,7 @@ db.moviesScratch.find({"_id": {$type: "string"}})
 ```
 
 
-##### Logical Operators
+##### Logical Operators**
 
 |	Operator	| 		Description		|
 |---------------|-----------------------|
@@ -84,7 +84,7 @@ db.moviesScratch.find({"_id": {$type: "string"}})
 |`$not`			|Inverts the effect of a query expression and returns documents that do not match the query expression.|
 |`$nor`			|Joins query clauses with a logical NOR returns all documents that fail to match both clauses.|
 
-**Query Eg**
+Query Eg:
 
 ```shell
 db.movieDetails.find({ $and: [{ "metacritic" : { $ne:null }}, { "metacritic":{ $exists: true } } ]  })
@@ -93,19 +93,19 @@ db.movieDetails.find({ $and: [{ "metacritic" : { $ne:null }}, { "metacritic":{ $
 db.movieDetails.find({ $or: [{ "tomato.meter" : { $gt:90 }}, { "metacritic":{ $gt: 70 } } ]  })
 ```
 
-##### Regex Operators
+##### **Regex Operators**
 
 |	Operator	| 		Description		|
 |---------------|-----------------------|
 |`$regex` 		|Provides regular expression capabilities for pattern matching strings in queries.|
 
-**Query Eg:**
+Query Eg:
 
 ```shell
 db.movieDetails.find({"awards.text" : { $regex: /^Won\s.*/}}, {"awards.text":1, "title":1, "_id":0})
 ```
 
-##### Array Operators
+##### **Array Operators**
 
 |	Operator	| 		Description		|
 |---------------|-----------------------|
@@ -113,7 +113,7 @@ db.movieDetails.find({"awards.text" : { $regex: /^Won\s.*/}}, {"awards.text":1, 
 |`$elemMatch`		|Selects documents if element in the array field matches all the specified $elemMatch conditions.|
 |`$size`			|Selects documents if the array field is a specified size.|
 
-**Query Eg:**
+Query Eg:
 
 ```shell
 db.movieDetails.find({"genres": {$all : ["Action","Adventure","Drama"]}}, {"title":1, "_id":0})
@@ -126,13 +126,13 @@ db.movieDetails.find({ boxOffice: {$elemMatch: { country: "UK", revenue: { $gt: 
 ```
 
 
-### Updating Documents
+### **Updating Documents**
 
-#### Update Operators
+#### **Update Operators**
 
 Thses operators update the document based on the inputs provided with the function (i.e. updateOne(), updatemany()..).
 
-#### Field Operators
+#### **Field Operators**
 
 |	Operator	| 		Description		|
 |---------------|-----------------------|
@@ -147,7 +147,7 @@ Thses operators update the document based on the inputs provided with the functi
 |`$currentDate`	|Sets the value of a field to current date, either as a Date or a Timestamp.
 
 
-#### Array Operators
+#### **Array Operators**
 
 |	Operator	| 		Description		|
 |---------------|-----------------------|
@@ -159,7 +159,7 @@ Thses operators update the document based on the inputs provided with the functi
 |`$pushAll`|	Deprecated. Adds several items to an array.|
 |`$push`|	Adds an item to an array.|
 
-#### Modifiers
+#### **Modifiers**
 
 |	Operator	| 		Description		|
 |---------------|-----------------------|
@@ -168,20 +168,20 @@ Thses operators update the document based on the inputs provided with the functi
 |`$sort`	|Modifies the $push operator to reorder documents stored in an array.|
 |`$position`|	Modifies the $push operator to specify the position in the array to add elements.|
 
-#### Bitwise Operator
+#### **Bitwise Operator**
 
 |	Operator	| 		Description		|
 |---------------|-----------------------|
 |`$bit`|	Performs bitwise AND, OR, and XOR updates of integer values.|
 
-#### Isolation Operator
+#### **Isolation Operator**
 
 |	Operator	| 		Description		|
 |---------------|-----------------------|
 |`$isolated` |	Modifies the behavior of a write operation to increase the isolation of the operation.|
 
 
-**Query Eg:**
+Query Eg:
 
 ```shell
 db.movieDetails.updateOne({
@@ -223,11 +223,11 @@ db.movieDetails.updateMany({
 })
 ```
 
-#### Upserts:
+#### **Upserts:**
 
 > The operations in which , no document were found for our operations, this build the document we queried for.
 
-**Query Eg:**
+Query Eg:
 
 ```shell
 db.movieDetails.updateOne({
@@ -239,11 +239,11 @@ db.movieDetails.updateOne({
 });
 ```
 
-#### replaceOne():
+#### **replaceOne():**
 
 It replaces the previous document with the new one, without duplicating it.
 
-**Query Eg:**
+Query Eg:
 
 ```shell
 db.movies.replaceOne({
