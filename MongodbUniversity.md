@@ -4,7 +4,7 @@ These are my personal notes for MongoDB University course: **M101JS: MongoDB for
 
 <br/>
 
-## Week : 1
+## Week : 1, Introduction
 
 ### Queries:
 
@@ -12,7 +12,7 @@ These are my personal notes for MongoDB University course: **M101JS: MongoDB for
 - `hasNext()`
 - `next()`
 
-## Week : 2
+## Week : 2, CRUD
 
 ### CRUD:
 
@@ -27,7 +27,8 @@ These are my personal notes for MongoDB University course: **M101JS: MongoDB for
 - `find({}).count()`
 
 ##### Cursors
-> The cursors work as default container of batch files when the database is queried. It acts as a pointer to the 
+> The cursors work as default container of batch files when the database is queried. It acts as a pointer to the collections stored in a databse.
+
 
 ##### Projections
 > Filter the number of result keys that are shown, and reduces processing speed & memory.
@@ -225,7 +226,7 @@ db.movieDetails.updateMany({
 
 #### **Upserts:**
 
-> The operations in which , no document were found for our operations, this build the document we queried for.
+> The operations in which , no document were found for our operations, this will build the document we queried for.
 
 Query Eg:
 
@@ -252,4 +253,13 @@ db.movies.replaceOne({
   detail);
 ```
 
+
+## Week : 3, The NodeJs Driver
+
+- `mongoimport`: The **mongoimport** tool imports content from an *Extended JSON, CSV, or TSV* export created by `mongoexport`, or potentially, another third-party export tool.
+
+For Eg: 
+```shell
+mongoimport -d crunchbase -c companies companies.json
+```
 
